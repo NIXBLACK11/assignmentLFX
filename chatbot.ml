@@ -1,19 +1,11 @@
-(* Enhanced Chatbot with a Guess-the-Number Game in OCaml *)
+(* chatbot.ml *)
 
 open Random
 
-(* Function to generate responses based on user input *)
-let generate_response input =
-  match String.lowercase_ascii input with
-  | "hello" | "hi" | "hey" -> "Hello there! How can I help you today?"
-  | "how are you?" | "what's up?" -> "I'm just a chatbot, but thanks for asking!"
-  | "bye" | "goodbye" -> "Goodbye! Have a great day!"
-  | "play game" -> "Let's play a game! I'm thinking of a number between 1 and 10. Try to guess it!"
-  | _ -> "I'm sorry, I didn't understand that. Can you please rephrase or ask something else?"
+(* ... existing code ... *)
 
 (* Function to play the Guess-the-Number game *)
 let rec play_game () =
-  (* Generate a new random number for each new game *)
   let secret_number = Random.int 10 + 1 in
 
   let rec guess_loop () =
@@ -44,9 +36,17 @@ let rec play_game () =
 
   guess_loop ()
 
-(* Main function for the chatbot *)
-let rec chatbot () =
-  (* Start the conversation *)
+(* ... existing code ... *)
+
+(* Function to generate a response based on user input *)
+let generate_response input =
+  (* Your implementation here based on the chatbot's logic *)
+  "This is a placeholder response. Implement your logic here."
+
+(* ... existing code ... *)
+
+(* Start the chatbot *)
+let () =
   print_endline "Welcome to the Chatbot! Type 'exit' to end the conversation.";
   print_endline "Type 'play game' to start a Guess-the-Number game.";
 
@@ -72,5 +72,4 @@ let rec chatbot () =
 
   conversation_loop ()
 
-(* Start the chatbot *)
-let () = chatbot ()
+(* ... existing code ... *)
