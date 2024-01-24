@@ -12,7 +12,10 @@ let generate_response input =
   | _ -> "I'm sorry, I didn't understand that. Can you please rephrase or ask something else?"
 
 (* Function to play the Guess-the-Number game *)
-let rec play_game secret_number =
+let rec play_game () =
+  (* Generate a new random number for each new game *)
+  let secret_number = Random.int 10 + 1 in
+
   let rec guess_loop () =
     print_string "> ";
     flush stdout;
@@ -43,12 +46,6 @@ let rec play_game secret_number =
 
 (* Main function for the chatbot *)
 let rec chatbot () =
-  (* Seed the random number generator *)
-  let () = Random.self_init () in
-
-  (* Generate a random number between 1 and 10 for the game *)
-  let secret_number = Random.int 10 + 1 in
-
   (* Start the conversation *)
   print_endline "Welcome to the Chatbot! Type 'exit' to end the conversation.";
   print_endline "Type 'play game' to start a Guess-the-Number game.";
@@ -66,7 +63,7 @@ let rec chatbot () =
 
       (* Check if the user wants to play the game *)
       if String.lowercase_ascii user_input = "play game" then begin
-        print_endline (play_game secret_number);
+        print_endline (play_game ());
         conversation_loop ()
       end else
         conversation_loop ()
