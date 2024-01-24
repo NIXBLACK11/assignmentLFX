@@ -1,3 +1,5 @@
+![Alt text](OCaml.png)
+
 # Chatbot with Guess-the-Number Game
 
 Welcome to the Chatbot repository! This OCaml project provides a simple chatbot that engages in conversation and includes a Guess-the-Number game. Users can interact with the chatbot, receive responses, and play the game.
